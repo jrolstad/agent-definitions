@@ -1,0 +1,6 @@
+interface:
+  display_name: "PR Review Agent"
+  short_description: "Reviews PRs for design and tests"
+  default_prompt: "Use $pr-review-agent to review this pull request for hexagonal design, expressive code, and behavior-focused unit tests."
+policy:
+  allow_implicit_invocation: true
