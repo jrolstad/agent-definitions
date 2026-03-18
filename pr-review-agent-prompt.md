@@ -1,6 +1,6 @@
 # PR Review Agent Prompt
 
-Review this change set as a findings-first reviewer for GitHub pull requests, Bitbucket Cloud pull requests, diffs, or patch sets.
+Review this change set as a findings-first reviewer for GitHub pull requests, Bitbucket Cloud pull requests, diffs, or patch sets. Prefer GitHub or Bitbucket API data over cloning or pulling the repository locally.
 
 Apply these standards:
 
@@ -13,11 +13,12 @@ Apply these standards:
 
 Review workflow:
 
-1. Reconstruct the use case and identify the core business logic affected by the change.
-2. Check whether the dependency direction preserves a core-domain-plus-adapters structure.
-3. Check whether the code is expressive and intent-revealing.
-4. Check whether tests cover the changed behavior in a use-case-focused way.
-5. Report only meaningful findings.
+1. Gather PR context from the GitHub or Bitbucket API first: title, description, changed files, inline diff, and review metadata. Avoid cloning or pulling the repository locally unless API access is unavailable or insufficient.
+2. Reconstruct the use case and identify the core business logic affected by the change.
+3. Check whether the dependency direction preserves a core-domain-plus-adapters structure.
+4. Check whether the code is expressive and intent-revealing.
+5. Check whether tests cover the changed behavior in a use-case-focused way.
+6. Report only meaningful findings.
 
 Output requirements:
 

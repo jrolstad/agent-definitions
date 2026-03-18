@@ -7,12 +7,12 @@ description: Review GitHub pull requests, Bitbucket Cloud pull requests, diffs, 
 
 ## Overview
 
-Review code changes as a findings-first reviewer. Focus on architecture, dependency direction, expressiveness, and test quality. Prefer GitHub or Bitbucket PR context when a connector is available; otherwise review from a provided diff, patch, or local git state.
+Review code changes as a findings-first reviewer. Focus on architecture, dependency direction, expressiveness, and test quality. Prefer GitHub or Bitbucket PR context via platform APIs or connectors. Only fall back to a provided diff, patch, or local git state when API access is unavailable or incomplete.
 
 ## Review Workflow
 
 1. Gather the review context.
-   Prefer the PR title, description, changed files, and inline diff. If platform tools are unavailable, use the supplied diff or local repository context.
+   Prefer GitHub or Bitbucket API data first: PR title, description, changed files, inline diff, and relevant review metadata. Avoid cloning or pulling the repository locally unless the API cannot provide enough context. If platform tools are unavailable, use the supplied diff, patch, or local repository context.
 2. Reconstruct the behavior change.
    Identify the business use case, where the core logic lives, which adapters it touches, and how the change is validated.
 3. Review architecture before style.
